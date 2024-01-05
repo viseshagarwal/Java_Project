@@ -6,7 +6,7 @@
 
 /**
  *
- * @author PRATAP KUMAR
+* @author Visesh, Keerthana & Greeshma
  */
 public class recepit1 extends javax.swing.JFrame {
 

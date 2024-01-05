@@ -6,7 +6,7 @@
 
 /**
  *
- * @author PRATAP KUMAR
+* @author Visesh, Keerthana & Greeshma
  */
 public class payment extends javax.swing.JFrame {
 

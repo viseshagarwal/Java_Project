@@ -9,7 +9,7 @@ import javax.swing.ButtonGroup;
 
 /**
  *
- * @author PRATAP KUMAR
+ * @author Visesh, Keerthana & Greeshma
  */
 public class cardselection extends javax.swing.JFrame {
 

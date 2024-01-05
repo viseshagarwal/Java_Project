@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author PRATAP KUMAR
+* @author Visesh, Keerthana & Greeshma
  */
 public class register extends javax.swing.JFrame {
 Connection conn=null;

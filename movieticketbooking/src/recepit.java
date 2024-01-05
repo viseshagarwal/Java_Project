@@ -7,7 +7,7 @@ import java.sql.*;
 
 /**
  *
- * @author PRATAP KUMAR
+* @author Visesh, Keerthana & Greeshma
  */
 public class recepit extends javax.swing.JFrame {
 

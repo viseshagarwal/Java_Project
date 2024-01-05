@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 
 /**
  *
- * @author PRATAP KUMAR
+* @author Visesh, Keerthana & Greeshma
  */
 public class movie extends javax.swing.JFrame {
 
