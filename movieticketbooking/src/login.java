@@ -148,6 +148,7 @@ public class login extends javax.swing.JFrame {
          Statement  s=null;
          ResultSet rs=null;
          int flag=0;
+         // comment
     
          //if(s1.equals("submit"))
    {
