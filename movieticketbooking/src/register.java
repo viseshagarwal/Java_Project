@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import javaapplication4.JavaApplication4;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -44,6 +45,7 @@ Connection conn=null;
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1080, 754));
@@ -79,7 +81,7 @@ Connection conn=null;
 
         jTextField3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(343, 310, 190, 30);
+        jTextField3.setBounds(340, 290, 190, 30);
 
         jButton1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
         jButton1.setText("SIGN UP");
@@ -89,7 +91,7 @@ Connection conn=null;
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(200, 380, 220, 39);
+        jButton1.setBounds(130, 430, 220, 39);
 
         jLabel4.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
         jLabel4.setText("NEW REGISTER");
@@ -105,6 +107,10 @@ Connection conn=null;
         getContentPane().add(jTextField4);
         jTextField4.setBounds(340, 240, 200, 30);
 
+        jPasswordField1.setText("jPasswordField1");
+        getContentPane().add(jPasswordField1);
+        jPasswordField1.setBounds(340, 340, 105, 25);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,13 +122,14 @@ Connection conn=null;
        String a=jTextField1.getText();
        String b=jTextField2.getText();
        String c=jTextField3.getText();
+       
     
        /**Statement s;
        ResultSet rs;
        try
        {
-           Class.forName("com.mysql.jdbc.Driver");
-          Connection conn =DriverManager.getConnection("jdbc:mysql://localhost/db","root","");
+           Class.forName("com.mysql.cj.jdbc.Driver");
+          Connection conn =DriverManager.getConnection(jdbc:mysql://localhost/java_dbmovies","root","");
           s=conn.createStatement();
           //int i=0,y=0,e=0;
          // s=conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
@@ -206,6 +213,7 @@ Connection conn=null;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
