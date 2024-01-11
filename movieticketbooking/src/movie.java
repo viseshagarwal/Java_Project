@@ -55,13 +55,13 @@ public class movie extends javax.swing.JFrame {
         jLabel2.setText("SELECT  THEATRE:");
 
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Robo 2", "sahoo", "arvandi sametha" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "KGF", "Robot 2", "Bahubali", "Barbie", "Dunki" }));
 
         jComboBox2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "srivishnu", "galaxy", "asscars", "PVR" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INOX", "PVR" }));
 
         jComboBox3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7:00AM", "11:00AM", "2:00PM", "6:00PM", "9:00PM" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00 AM", "12:00 AM", "11:00 AM", "02:00 PM", " " }));
 
         jComboBox4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "11-11-2018", "12-11-2018", "10-11-2018", "09-11-2018" }));
@@ -106,7 +106,7 @@ public class movie extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addGap(74, 74, 74)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(206, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -165,7 +165,7 @@ public class movie extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(137, 137, 137)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(286, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

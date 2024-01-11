@@ -1,4 +1,10 @@
 
+import java.awt.Image;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /*
@@ -11,7 +17,6 @@ import javax.swing.JOptionPane;
  * @author visesh
  */
 public class Home extends javax.swing.JFrame {
-
     /**
      * Creates new form Home
      */
@@ -31,8 +36,11 @@ public class Home extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        txtsearch = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImages(null);
 
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,17 +63,29 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setText("Search");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(jButton1)
-                .addGap(98, 98, 98)
-                .addComponent(jButton2)
-                .addGap(104, 104, 104)
-                .addComponent(jButton3)
+                .addGap(30, 30, 30)
+                .addComponent(jButton4)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(98, 98, 98)
+                        .addComponent(jButton2)
+                        .addGap(104, 104, 104)
+                        .addComponent(jButton3))
+                    .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -76,7 +96,11 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addGap(140, 140, 140))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4)
+                    .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86))
         );
 
         pack();
@@ -85,13 +109,12 @@ public class Home extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
            this.setVisible(false);   
-    new login().setVisible(true);  
+           new login().setVisible(true);  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this,"Thank you!");
-      //JOptionPane.showMessageDialog
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -100,6 +123,43 @@ public class Home extends javax.swing.JFrame {
            this.setVisible(false);   
     new register().setVisible(true);  
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+            workWithDatabase();
+    }//GEN-LAST:event_jButton4ActionPerformed
+    public void workWithDatabase()
+    {
+         Connection c=null;
+         Statement  s=null;
+         ResultSet rs=null;
+         int flag=0;
+         // comment
+    
+         //if(s1.equals("submit"))
+   {
+   try
+   {
+       Class.forName("com.mysql.cj.jdbc.Driver");
+       c=DriverManager.getConnection("jdbc:mysql://localhost/java_dbmovies","root","");
+       s=c.createStatement();
+       rs=s.executeQuery("select name,password from register");
+       while(rs.next())
+       {      
+      
+       }
+       }
+       
+   catch(Exception e)
+     {
+          System.out.println(e);
+      }
+   }
+       
+   
+    
+   // TODO add your handling code here:
+    }                                      
 
     /**
      * @param args the command line arguments
@@ -140,5 +200,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JTextField txtsearch;
     // End of variables declaration//GEN-END:variables
 }
