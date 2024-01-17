@@ -1,14 +1,15 @@
+
 import java.sql.*;
 import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
-* @author Visesh, Keerthana & Greeshma
+ * @author Visesh, Keerthana & Greeshma
  */
 public class login extends javax.swing.JFrame {
 
@@ -17,6 +18,22 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+    }
+    String a;
+    String b;
+    String c;
+    String e;
+    String f;
+    int N1;
+
+    public login(String p1, String p2, String p3, String p4, int p5, String p6) {
+        initComponents();
+        this.a = p1;
+        this.b = p2;
+        this.c = p3;
+        this.e = p4;
+        this.N1 = p5;
+        this.f = p6;
     }
 
     /**
@@ -138,77 +155,68 @@ public class login extends javax.swing.JFrame {
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         // new movie().setVisible(true); 
-       //  String s1;
-                 //s1=evt.getActionCommand();
-         workWithDatabase();
+        //  String s1;
+        //s1=evt.getActionCommand();
+        workWithDatabase();
+
     }
-    public void workWithDatabase()
-    {
-         Connection c=null;
-         Statement  s=null;
-         ResultSet rs=null;
-         int flag=0;
-         // comment
-    
-         //if(s1.equals("submit"))
-   {
-   try
-   {
-       Class.forName("com.mysql.cj.jdbc.Driver");
-       c=DriverManager.getConnection("jdbc:mysql://localhost/java_dbmovies","root","");
-       s=c.createStatement();
-       String a=jTextField1.getText();
-       String b=jPasswordField1.getText();
-       rs=s.executeQuery("select name,password from register");
-       while(rs.next())
-       {       //flag=1;
-               String ename=rs.getString("name");
-               String pass=rs.getString("password");
-        if(a.equals(ename) && b.equals(pass))
-        {  
-           
-        JOptionPane.showMessageDialog(this,"Logined successfully");
-       this.setVisible(false);   new movie().setVisible(true);
-         //continue;
-         break;
-         }
-       /** else
+
+    public void workWithDatabase() {
+        Connection c = null;
+        Statement s = null;
+        ResultSet rs = null;
+        int flag = 0;
+        // comment
+
+        //if(s1.equals("submit"))
         {
-            // System.out.println("enter valid details");
-           //JOptionPane.showMessageDialog(null,"Invalid password or Username");
-            //break;
-         
-        }**/
-       
-       
-        else if("".equals(a) && "".equals(b))
-       {
-           JOptionPane.showMessageDialog(this,"please enter valid details");
-           break;
-           
-       }
-       }
-       /**if(flag==0)
-        {
-           setVisible(true);
-        }**/
-       }
-       
-   catch(Exception e)
-     {
-          System.out.println(e);
-      }
-   }
-       
-   
-    
-   // TODO add your handling code here:
+            try {
+//                Class.forName("com.mysql.cj.jdbc.Driver");
+                c = DriverManager.getConnection("jdbc:mysql://localhost/java_dbmovies", "root", "");
+                s = c.createStatement();
+                String a = jTextField1.getText();
+                String b = jPasswordField1.getText();
+                rs = s.executeQuery("select name,password from register");
+                while (rs.next()) {       //flag=1;
+                    String ename = rs.getString("name");
+                    String pass = rs.getString("password");
+                    if (a.equals(ename) && b.equals(pass)) {
+
+                        JOptionPane.showMessageDialog(this, "Logined successfully");
+                        this.setVisible(false);
+                        new cardselection(this.a, this.b, this.c, this.e, this.N1, this.f).setVisible(true);
+//                        new movie().setVisible(true);
+
+                        //continue;
+                        break;
+                    } /**
+                     * else { // System.out.println("enter valid details");
+                     * //JOptionPane.showMessageDialog(null,"Invalid password or
+                     * Username"); //break;
+                     *
+                     * }*
+                     */
+                    else if ("".equals(a) && "".equals(b)) {
+                        JOptionPane.showMessageDialog(this, "please enter valid details");
+                        break;
+
+                    }
+                }
+                /**
+                 * if(flag==0) { setVisible(true); }*
+                 */
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_submitActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    // TODO add your handling code here:
-    this.setVisible(false);   
-    new register().setVisible(true);      
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new register().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

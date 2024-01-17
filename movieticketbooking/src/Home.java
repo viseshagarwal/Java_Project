@@ -39,12 +39,12 @@ public class Home extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         txtsearch = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImages(null);
 
-        jButton1.setText("Login");
+        jButton1.setText("Book");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -72,7 +72,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sequence.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,16 +93,16 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(jButton3))
                             .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(jLabel1)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                        .addGap(209, 209, 209)
+                        .addComponent(jLabel2)))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(61, 61, 61)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 401, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -120,7 +120,7 @@ public class Home extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
            this.setVisible(false);   
-           new login().setVisible(true);  
+           new movie().setVisible(true);  
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -137,40 +137,44 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-            workWithDatabase();
+            searchDatabase();
+            
     }//GEN-LAST:event_jButton4ActionPerformed
-    public void workWithDatabase()
-    {
-         Connection c=null;
-         Statement  s=null;
-         ResultSet rs=null;
-         int flag=0;
-         // comment
-    
-         //if(s1.equals("submit"))
-   {
-   try
-   {
-       Class.forName("com.mysql.cj.jdbc.Driver");
-       c=DriverManager.getConnection("jdbc:mysql://localhost/java_dbmovies","root","");
-       s=c.createStatement();
-       rs=s.executeQuery("select name,password from register");
-       while(rs.next())
-       {      
-      
-       }
-       }
-       
-   catch(Exception e)
-     {
-          System.out.println(e);
-      }
-   }
-       
-   
-    
-   // TODO add your handling code here:
-    }                                      
+     private void searchDatabase() {
+//        String searchName = searchField.getText()
+        String searchName =txtsearch.getText().trim();
+        if (searchName.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a movie name to search.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Database connection and query
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_dbmovies", "root", "");
+            String query = "SELECT * FROM table3 WHERE movie LIKE ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, "%" + searchName + "%");
+
+            ResultSet resultSet = statement.executeQuery();
+
+            // Check if movie is available
+            if (resultSet.next()) {
+                String availableMovie = resultSet.getString("movie");
+                JOptionPane.showMessageDialog(this, "The movie '" + availableMovie + "' is available!", "Movie Found", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Sorry, the movie is not available.", "Movie Not Found", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+            // Close resources
+            resultSet.close();
+            statement.close();
+            connection.close();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error connecting to the database.", "Database Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -212,7 +216,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtsearch;
     // End of variables declaration//GEN-END:variables
 }

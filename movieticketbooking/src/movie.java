@@ -1,15 +1,17 @@
+
 import java.sql.*;
 import java.sql.DriverManager;
+import javax.swing.*;
+//import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
-* @author Visesh, Keerthana & Greeshma
+ * @author Visesh, Keerthana & Greeshma
  */
 public class movie extends javax.swing.JFrame {
 
@@ -105,7 +107,7 @@ public class movie extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(74, 74, 74)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,84 +181,85 @@ public class movie extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
+
         workWithDatabase();
     }
-     public void workWithDatabase()
-    {
-         String a=(String) jComboBox1.getSelectedItem();
-       String b=(String) jComboBox2.getSelectedItem();
-        String e=(String) jComboBox3.getSelectedItem();
-        String f=(String) jComboBox4.getSelectedItem();
-       String d=jTextField1.getText();
-       
-        
-         Connection c=null;
-         Statement  s=null;
-         
-         ResultSet rs=null;
-         int flag=0;
-     
+
+    public void workWithDatabase() {
+        String a = (String) jComboBox1.getSelectedItem();
+        String b = (String) jComboBox2.getSelectedItem();
+        String e = (String) jComboBox3.getSelectedItem();
+        String f = (String) jComboBox4.getSelectedItem();
+        String d = jTextField1.getText();
+
+        Connection c = null;
+        Statement s = null;
+
+        ResultSet rs = null;
+        int flag = 0;
+
         //if(!a.equals(""))
-         String N=jTextField1.getText();
-        int N1=Integer.parseInt(N);
-        int N2=N1;
-         N1*=100;
-       //new recepit(a,b,e,d,N1,f).setVisible(true);
-        
-      if(N2<10 && N2>0)
-        
-         {  
-             this.setVisible(false);  new recepit(a,b,e,d,N1,f).setVisible(true); 
-       
-         try
-   {
-       Class.forName("com.mysql.jdbc.Driver");
-       c=DriverManager.getConnection("jdbc:mysql://localhost/java_dbmovies","root","");
-       s=c.createStatement();
-        b=(String) jComboBox2.getSelectedItem();
-       e=(String) jComboBox3.getSelectedItem();
-      String q1=b;
-       String q2=e;
-       rs=s.executeQuery("select tickets from table3 where theatre="+"'"+q1+"'"+" and shows="+"'"+q2+"'");
-      String bid=jTextField1.getText();
-      int id=Integer.parseInt(bid);
-      rs=s.executeQuery("select tickets from table3 where theatre="+"'"+q1+"'"+" and shows="+"'"+q2+"'");
-       while(rs.next())
-     {
-    String id1=rs.getString("tickets");
-     int id2=Integer.parseInt(id1);
-     
-     id2=id2-N2;
-     
-     s.executeUpdate("Update table3 set tickets="+id2+" where theatre="+"'"+q1+"'"+" and shows="+"'"+q2+"'");
-    }
-    //new recepit(a,b,e,d).setVisible(true);
-       while(rs.next())
-       {
-               String tickets1=rs.getString("tickets");
-               String q3 = tickets1;
-               
-               //jLabel5 = new javax.swing.JLabel("tickets available:"+"  "+q3);
-               
-         }
-              
-     
-      //rs.close;
-      //s.close;
-      //c.close;
-   }    
-         catch(SQLException | ClassNotFoundException e1)
-         {
-             System.out.println(e1);
-         }
-            
-         
-         
-        
-            
-         }
-             
+        String N = jTextField1.getText().trim();
+
+        if (N.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter the number of tickets.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        } //}
+        //new recepit(a,b,e,d,N1,f).setVisible(true);
+        else {
+            try {
+                int N1 = Integer.parseInt(N); // catch
+                int N2 = N1;
+                N1 *= 100;
+                if (N1 <= 0) {
+                    JOptionPane.showMessageDialog(this, "Number of tickets should be a positive integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+
+                }
+                if (N2 < 10 && N2 > 0) {
+                    this.setVisible(false);
+                    new recepit(a, b, e, d, N1, f).setVisible(true);
+
+                    try {
+                        // TODO
+                        // Class.forName("com.mysql.cj.jdbc.Driver");
+                        c = DriverManager.getConnection("jdbc:mysql://localhost/java_dbmovies", "root", "");
+                        s = c.createStatement();
+                        b = (String) jComboBox2.getSelectedItem();
+                        e = (String) jComboBox3.getSelectedItem();
+                        String q1 = b;
+                        String q2 = e;
+                        rs = s.executeQuery("select tickets from table3 where theatre=" + "'" + q1 + "'" + " and shows=" + "'" + q2 + "'");
+                        String bid = jTextField1.getText();
+                        int id = Integer.parseInt(bid);
+                        rs = s.executeQuery("select tickets from table3 where theatre=" + "'" + q1 + "'" + " and shows=" + "'" + q2 + "'");
+                        while (rs.next()) {
+                            String id1 = rs.getString("tickets");
+                            int id2 = Integer.parseInt(id1);
+                            id2 = id2 - N2;
+
+                            s.executeUpdate("Update table3 set tickets=" + id2 + " where theatre=" + "'" + q1 + "'" + " and shows=" + "'" + q2 + "'");
+                        }
+                        //new recepit(a,b,e,d).setVisible(true);
+                        while (rs.next()) {
+                            String tickets1 = rs.getString("tickets");
+                            String q3 = tickets1;
+
+                            //jLabel5 = new javax.swing.JLabel("tickets available:"+"  "+q3);
+                        }
+
+                        //rs.close;
+                        //s.close;
+                        //c.close;
+                        // } catch (SQLException | ClassNotFoundException e1) {
+                    } catch (SQLException e1) {
+                        System.out.println(e1);
+                    }
+
+                }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Number of tickets should be a positive integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

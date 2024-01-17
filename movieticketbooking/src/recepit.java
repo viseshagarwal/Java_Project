@@ -1,13 +1,14 @@
+
 import java.sql.*;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
-* @author Visesh, Keerthana & Greeshma
+ * @author Visesh, Keerthana & Greeshma
  */
 public class recepit extends javax.swing.JFrame {
 
@@ -17,23 +18,29 @@ public class recepit extends javax.swing.JFrame {
     public recepit() {
         initComponents();
     }
-    String a;String b;String c;String e;String f;
-            int N1;
-    public recepit(String p1,String p2,String p3,String p4,int p5,String p6){
-    initComponents();
-    this.a=p1;
-    this.b=p2;
-    this.c=p3;
-    this.e=p4;
-    this.N1=p5;
-    this.f=p6;
-    jLabel7.setText(p4);
-    jLabel8.setText(p2);
-    jLabel9.setText(p1);
-    jLabel10.setText(p3);
-    jLabel11.setText(String.valueOf(p5));
-    jLabel13.setText(p6);
+    String a;
+    String b;
+    String c;
+    String e;
+    String f;
+    int N1;
+
+    public recepit(String p1, String p2, String p3, String p4, int p5, String p6) {
+        initComponents();
+        this.a = p1;
+        this.b = p2;
+        this.c = p3;
+        this.e = p4;
+        this.N1 = p5;
+        this.f = p6;
+        jLabel7.setText(p4);
+        jLabel8.setText(p2);
+        jLabel9.setText(p1);
+        jLabel10.setText(p3);
+        jLabel11.setText(String.valueOf(p5));
+        jLabel13.setText(p6);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -153,7 +160,7 @@ public class recepit extends javax.swing.JFrame {
         );
 
         jButton1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
-        jButton1.setText("BOOK");
+        jButton1.setText("Book");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -207,12 +214,14 @@ public class recepit extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);     
-        new cardselection(a,b,c,e,N1,f).setVisible(true); 
+        this.setVisible(false);
+        //new cardselection(a, b, c, e, N1, f).setVisible(true);
+        new login(a, b, c, e, N1, f).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-this.setVisible(false);        new CANCEL().setVisible(true);        // TODO add your handling code here:
+        this.setVisible(false);
+        new CANCEL().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -269,5 +278,4 @@ this.setVisible(false);        new CANCEL().setVisible(true);        // TODO add
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-   
 }
