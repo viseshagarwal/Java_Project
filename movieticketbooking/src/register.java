@@ -1,5 +1,4 @@
 import java.sql.*;
-import java.sql.DriverManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaapplication4.JavaApplication4;
@@ -45,26 +44,26 @@ Connection conn=null;
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1080, 754));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("NAME");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(135, 128, 110, 33);
+        jLabel1.setBounds(110, 130, 110, 33);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("EMAIL ID");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(135, 184, 140, 33);
+        jLabel2.setBounds(110, 180, 140, 33);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel3.setText("PASSWORD");
+        jLabel3.setText("Confirm Password");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(135, 309, 150, 33);
+        jLabel3.setBounds(110, 360, 220, 33);
 
         jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -73,15 +72,15 @@ Connection conn=null;
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(343, 129, 190, 39);
+        jTextField1.setBounds(350, 130, 200, 30);
 
         jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(343, 185, 190, 30);
+        jTextField2.setBounds(350, 190, 200, 30);
 
         jTextField3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(340, 290, 190, 30);
+        jTextField3.setBounds(350, 300, 200, 30);
 
         jButton1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
         jButton1.setText("SIGN UP");
@@ -101,15 +100,18 @@ Connection conn=null;
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel5.setText("PHONE NUMBER");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(135, 250, 200, 33);
+        jLabel5.setBounds(110, 240, 200, 33);
 
         jTextField4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(340, 240, 200, 30);
+        jTextField4.setBounds(350, 250, 200, 30);
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(350, 360, 200, 30);
 
-        jPasswordField1.setText("jPasswordField1");
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(340, 340, 105, 25);
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel6.setText("PASSWORD");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(110, 310, 150, 33);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,11 +215,12 @@ Connection conn=null;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 
     private ResultSet executeQuery(String select__from_register) {
