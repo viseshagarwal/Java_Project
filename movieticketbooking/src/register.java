@@ -1,28 +1,19 @@
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javaapplication4.JavaApplication4;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
 /**
  *
-* @author Visesh, Keerthana & Greeshma
+ * @author visesh
  */
 public class register extends javax.swing.JFrame {
-Connection conn=null;
+
     /**
      * Creates new form register
      */
     public register() {
         initComponents();
-        conn=JavaApplication4.ConnecrDb();
     }
 
     /**
@@ -36,143 +27,37 @@ Connection conn=null;
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("NAME");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(110, 130, 110, 33);
+        jLabel1.setText("jLabel1");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setText("EMAIL ID");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 180, 140, 33);
+        jLabel2.setText("jLabel2");
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel3.setText("Confirm Password");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(110, 360, 220, 33);
-
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(350, 130, 200, 30);
-
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(350, 190, 200, 30);
-
-        jTextField3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(350, 300, 200, 30);
-
-        jButton1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
-        jButton1.setText("SIGN UP");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(130, 430, 220, 39);
-
-        jLabel4.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
-        jLabel4.setText("NEW REGISTER");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 30, 300, 50);
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setText("PHONE NUMBER");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(110, 240, 200, 33);
-
-        jTextField4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(350, 250, 200, 30);
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(350, 360, 200, 30);
-
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel6.setText("PASSWORD");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(110, 310, 150, 33);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addContainerGap(588, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jLabel1)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel2)
+                .addContainerGap(375, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String a=jTextField1.getText();
-       String b=jTextField2.getText();
-       String c=jTextField3.getText();
-       
-    
-       /**Statement s;
-       ResultSet rs;
-       try
-       {
-           Class.forName("com.mysql.cj.jdbc.Driver");
-          Connection conn =DriverManager.getConnection(jdbc:mysql://localhost/java_dbmovies","root","");
-          s=conn.createStatement();
-          //int i=0,y=0,e=0;
-         // s=conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-          //rs=executeQuery("select * from register");
-          //a=jTextField1.getText();
-          /**While (rs.next() && y==0)
-                 ; {
-                      String p=rs.getString("name");
-                      a=jTextField1.getText();
-                      System.out.println(p+""+a);
-                  }
-                  System.out.println(e);
-                  s.executeUpdate("insert into register values('"+a+"','"+b+"','"+c+"');");
-       }
-       catch(Exception e)
-       {
-           System.out.println(e);
-       }**/
-       if("".equals(a) && "".equals(b) && "".equals(c))
-       {
-           JOptionPane.showMessageDialog(this,"please enter valid details");
-       }
-       else {
-           
-       
-       try{
-          Statement s =conn.createStatement();
-          String s1=("insert into register values('"+a+"','"+b+"','"+c+"');");
-          System.out.println("success");
-          s.executeUpdate(s1);
-       }
-       catch(SQLException e)
-       {
-           Logger.getLogger(register.class.getName()).log(Level.SEVERE,null,e);
-       }
-       
-      this.setVisible(false);   new login().setVisible(true);
-          
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-}
     /**
      * @param args the command line arguments
      */
@@ -209,25 +94,7 @@ Connection conn=null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
-
-    private ResultSet executeQuery(String select__from_register) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void While(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
