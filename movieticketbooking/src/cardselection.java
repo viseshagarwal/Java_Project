@@ -1,4 +1,4 @@
-
+ 
 import javax.swing.ButtonGroup;
 
 /*
@@ -6,6 +6,7 @@ import javax.swing.ButtonGroup;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
  *
  * @author Visesh, Keerthana & Greeshma
@@ -19,43 +20,37 @@ public class cardselection extends javax.swing.JFrame {
         initComponents();
         groupButton();
     }
-
     private void groupButton() {
-
-        ButtonGroup bg1 = new ButtonGroup();
+        
+        ButtonGroup bg1= new ButtonGroup();
         bg1.add(jRadioButton1);
         bg1.add(jRadioButton2);
         bg1.add(jRadioButton3);
-        //bg1.add(jRadioButton4);
+       //bg1.add(jRadioButton4);
+
 
     }
-    String a;
-    String b;
-    String c;
-    String e;
-    String f;
-    int N1;
-
-    public cardselection(String p1, String p2, String p3, String p4, int p5, String p6) {
-        initComponents();
-        this.a = p1;
-        this.b = p2;
-        this.c = p3;
-        this.e = p4;
-        this.N1 = p5;
-        this.f = p6;
-        jLabel6.setText(p4);
-        jLabel7.setText(p2);
-        jLabel8.setText(p1);
-        jLabel9.setText(p6);
-        jLabel10.setText(String.valueOf(p5));
-        jLabel12.setText(p3);
+    String a;String b;String c;String e;String f;
+            int N1;
+    public cardselection(String p1,String p2,String p3,String p4,int p5,String p6){
+    initComponents();
+    this.a=p1;
+    this.b=p2;
+    this.c=p3;
+    this.e=p4;
+    this.N1=p5;
+    this.f=p6;
+    jLabel6.setText(p4);
+    jLabel7.setText(p2);
+    jLabel8.setText(p1);
+    jLabel9.setText(p6);  
+    jLabel10.setText(String.valueOf(p5));
+    jLabel12.setText(p3);
     }
 
     cardselection(String a, String b, String c, String e, String f, int N1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -295,15 +290,13 @@ public class cardselection extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
-        new payment(a, b, c, e, N1, f).setVisible(true); // TODO add your handling code here:
-
+this.setVisible(false);       new payment(a,b,c,e,N1,f).setVisible(true); // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
-        new recepit().setVisible(true); // TODO add your handling code here:
-
+this.setVisible(false);        new recepit().setVisible(true); // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed

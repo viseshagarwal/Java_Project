@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Visesh, Keerthana & Greeshma
+* @author Visesh, Keerthana & Greeshma
  */
 public class payment extends javax.swing.JFrame {
 
@@ -16,27 +16,22 @@ public class payment extends javax.swing.JFrame {
     public payment() {
         initComponents();
     }
-    String a;
-    String b;
-    String c;
-    String e;
-    String f;
-    int N1;
-
-    public payment(String p1, String p2, String p3, String p4, int p5, String p6) {
-        initComponents();
-        this.a = p1;
-        this.b = p2;
-        this.c = p3;
-        this.e = p4;
-        this.N1 = p5;
-        this.f = p6;
-        jLabel10.setText(p4);
-        jLabel14.setText(p2);
-        jLabel12.setText(p1);
-        jLabel15.setText(p6);
-        jLabel13.setText(String.valueOf(p5));
-        jLabel16.setText(p3);
+       String a;String b;String c;String e;String f;
+            int N1;
+    public payment(String p1,String p2,String p3,String p4,int p5,String p6){
+    initComponents();
+    this.a=p1;
+    this.b=p2;
+    this.c=p3;
+    this.e=p4;
+    this.N1=p5;
+    this.f=p6;
+    jLabel10.setText(p4);
+    jLabel14.setText(p2);
+    jLabel12.setText(p1);
+    jLabel15.setText(p6);
+    jLabel13.setText(String.valueOf(p5));
+    jLabel16.setText(p3);
     }
 
     /**
@@ -303,8 +298,7 @@ public class payment extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        new recepit1(a, b, c, e, N1, f).setVisible(true);
+ this.setVisible(false);       new recepit1(a,b,c,e,N1,f).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
