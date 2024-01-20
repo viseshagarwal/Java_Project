@@ -1,19 +1,41 @@
+
+import javax.swing.*;
+import java.sql.*;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author visesh
  */
 public class register extends javax.swing.JFrame {
 
+    Connection c = null;
+    Statement s = null;
+    ResultSet rs = null;
+
     /**
      * Creates new form register
      */
     public register() {
         initComponents();
+        workWithDatabase();
+    }
+
+    public void workWithDatabase() {
+        try {
+//                Class.forName("com.mysql.cj.jdbc.Driver");
+            c = DriverManager.getConnection("jdbc:mysql://localhost/java_dbmovies", "root", "");
+            s = c.createStatement();
+            //JOptionPane.showMessageDialog(this, "Connection Sucessful!!");
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        // TODO add your handling code here:
     }
 
     /**
@@ -25,38 +47,187 @@ public class register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtname = new javax.swing.JTextField();
+        txtemail = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtphone = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtpwd1 = new javax.swing.JPasswordField();
+        txtpwd2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel3.setText("NAME");
 
-        jLabel2.setText("jLabel2");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel4.setText("EMAIL ID");
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel5.setText("Confirm Password");
+
+        txtname.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        txtname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnameActionPerformed(evt);
+            }
+        });
+
+        txtemail.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+
+        jButton1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
+        jButton1.setText("SIGN UP");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
+        jLabel6.setText("NEW REGISTER");
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel7.setText("PHONE NUMBER");
+
+        txtphone.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel8.setText("PASSWORD");
+
+        txtpwd1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addContainerGap(588, Short.MAX_VALUE))
+                .addGap(0, 127, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(100, 100, 100)
+                        .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtpwd2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtphone)
+                            .addComponent(txtpwd1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
+                .addGap(0, 128, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jLabel1)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel2)
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addGap(0, 34, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(txtphone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtpwd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtpwd2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addComponent(jButton1)
+                .addGap(0, 33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String name = txtname.getText();
+        String email = txtemail.getText();
+        String pwd1 = txtpwd1.getText();
+        String pwd2 = txtpwd2.getText();
+        String phone = txtphone.getText();
+
+        if (!isValidName(name) || !isValidEmail(email) || !isValidPhoneNumber(phone) || pwd1.length() == 0 || pwd2.length() == 0) {
+            JOptionPane.showMessageDialog(this, "Please fill in all fields with valid information.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (pwd1.equals(pwd2)) {
+            //JOptionPane.showMessageDialog(this, "Password is same");
+            String query = "INSERT INTO register (name, password, email,phone_no) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement preparedStatement = c.prepareStatement(query)) {
+                preparedStatement.setString(1, name);
+                preparedStatement.setString(2, pwd1);
+                preparedStatement.setString(3, email);
+                preparedStatement.setString(4, phone);
+                int rowsAffected = preparedStatement.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Registration Sucessfull");
+                this.setVisible(false);
+                new login().setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please check your password!!");
+            txtpwd1.setText("");
+            txtpwd2.setText("");
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+    private boolean isValidName(String name) {
+        String regex = "^[a-zA-Z\\s]+$";
+        return name.matches(regex);
+    }
+
+    // Validate email using a simple regex (you might want to use a more comprehensive one in a real application)
+    private boolean isValidEmail(String email) {
+        String regex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$";
+        return email.matches(regex);
+    }
+
+    // Validate phone number (allow only digits and optional '+' sign)
+    private boolean isValidPhoneNumber(String phone) {
+        String regex = "^[+]?[0-9]+$";
+        return phone.matches(regex);
+    }
 
     /**
      * @param args the command line arguments
@@ -94,7 +265,17 @@ public class register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField txtemail;
+    private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtphone;
+    private javax.swing.JPasswordField txtpwd1;
+    private javax.swing.JPasswordField txtpwd2;
     // End of variables declaration//GEN-END:variables
 }
