@@ -1,8 +1,9 @@
+
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javaapplication4.JavaApplication4;
-import java.sql.SQLException;
+//import javaapplication4.JavaApplication4;
+//import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /*
@@ -10,19 +11,38 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
-* @author Visesh, Keerthana & Greeshma
+ * @author Visesh, Keerthana & Greeshma
  */
 public class register extends javax.swing.JFrame {
-Connection conn=null;
+//Connection conn=null;
+
     /**
      * Creates new form register
      */
     public register() {
         initComponents();
-        conn=JavaApplication4.ConnecrDb();
+        workWithDatabase();
+        //conn=JavaApplication4.ConnecrDb();
+    }
+
+    public void workWithDatabase() {
+        Connection c = null;
+        Statement s = null;
+        ResultSet rs = null;
+        {
+            try {
+//                Class.forName("com.mysql.cj.jdbc.Driver");
+                c = DriverManager.getConnection("jdbc:mysql://localhost/java_dbmovies", "root", "");
+                s = c.createStatement();
+                // JOptionPane.showMessageDialog(this,"Logging Sucessful!");
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+
+        // TODO add your handling code here:
     }
 
     /**
@@ -121,58 +141,21 @@ Connection conn=null;
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String a=jTextField1.getText();
-       String b=jTextField2.getText();
-       String c=jTextField3.getText();
-       
-    
-       /**Statement s;
-       ResultSet rs;
-       try
-       {
-           Class.forName("com.mysql.cj.jdbc.Driver");
-          Connection conn =DriverManager.getConnection(jdbc:mysql://localhost/java_dbmovies","root","");
-          s=conn.createStatement();
-          //int i=0,y=0,e=0;
-         // s=conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-          //rs=executeQuery("select * from register");
-          //a=jTextField1.getText();
-          /**While (rs.next() && y==0)
-                 ; {
-                      String p=rs.getString("name");
-                      a=jTextField1.getText();
-                      System.out.println(p+""+a);
-                  }
-                  System.out.println(e);
-                  s.executeUpdate("insert into register values('"+a+"','"+b+"','"+c+"');");
-       }
-       catch(Exception e)
-       {
-           System.out.println(e);
-       }**/
-       if("".equals(a) && "".equals(b) && "".equals(c))
-       {
-           JOptionPane.showMessageDialog(this,"please enter valid details");
-       }
-       else {
-           
-       
-       try{
-          Statement s =conn.createStatement();
-          String s1=("insert into register values('"+a+"','"+b+"','"+c+"');");
-          System.out.println("success");
-          s.executeUpdate(s1);
-       }
-       catch(SQLException e)
-       {
-           Logger.getLogger(register.class.getName()).log(Level.SEVERE,null,e);
-       }
-       
-      this.setVisible(false);   new login().setVisible(true);
-          
-        // TODO add your handling code here:
+        String a = jTextField1.getText();
+        String b = jTextField2.getText();
+        String c = jTextField3.getText();
+
+        if ("".equals(a) && "".equals(b) && "".equals(c)) {
+            JOptionPane.showMessageDialog(this, "please enter valid details");
+        } else {
+
+            this.setVisible(false);
+            new login().setVisible(true);
+
+            // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-}
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -204,6 +187,7 @@ Connection conn=null;
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new register().setVisible(true);
+                //workWithDatabase();
             }
         });
     }

@@ -6,7 +6,7 @@
 
 /**
  *
-* @author Visesh, Keerthana & Greeshma
+ * @author Visesh, Keerthana & Greeshma
  */
 public class recepit1 extends javax.swing.JFrame {
 
@@ -16,23 +16,28 @@ public class recepit1 extends javax.swing.JFrame {
     public recepit1() {
         initComponents();
     }
-String a;String b;String c;String e;String f;
-            int N1;
-    public recepit1(String p1,String p2,String p3,String p4,int p5,String p6){
-    initComponents();
-    this.a=p1;
-    this.b=p2;
-    this.c=p3;
-    this.e=p4;
-    this.N1=p5;
-    this.f=p6;
-    jLabel7.setText(p4);
-    jLabel8.setText(p2);
-    jLabel9.setText(p1);
-    jLabel10.setText(p3);
-    jLabel11.setText(String.valueOf(p5));
-    jLabel13.setText(p6);
-    }    
+    String a;
+    String b;
+    String c;
+    String e;
+    String f;
+    int N1;
+
+    public recepit1(String p1, String p2, String p3, String p4, int p5, String p6) {
+        initComponents();
+        this.a = p1;
+        this.b = p2;
+        this.c = p3;
+        this.e = p4;
+        this.N1 = p5;
+        this.f = p6;
+        jLabel7.setText(p4);
+        jLabel8.setText(p2);
+        jLabel9.setText(p1);
+        jLabel10.setText(p3);
+        jLabel11.setText(String.valueOf(p5));
+        jLabel13.setText(p6);
+    }
 
     recepit1(String a, String b, String c, String d, String e, int N1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
