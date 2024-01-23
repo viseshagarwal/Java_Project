@@ -79,7 +79,7 @@ public class payment extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(0, 102, 102));
 
         jButton1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
-        jButton1.setText("proceed");
+        jButton1.setText("Proceed");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

@@ -209,7 +209,7 @@ public class movie extends javax.swing.JFrame {
             try {
                 int N1 = Integer.parseInt(N); // catch
                 int N2 = N1;
-                N1 *= 100;
+                N1 *= 220;
                 if (N1 <= 0) {
                     JOptionPane.showMessageDialog(this, "Number of tickets should be a positive integer.", "Input Error", JOptionPane.ERROR_MESSAGE);
                     return;

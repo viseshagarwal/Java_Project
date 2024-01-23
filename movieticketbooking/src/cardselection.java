@@ -1,5 +1,9 @@
 
 import javax.swing.ButtonGroup;
+import javax.swing.*;
+import java.awt.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -295,11 +299,30 @@ public class cardselection extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
         this.setVisible(false);
-        new payment(a, b, c, e, N1, f).setVisible(true); // TODO add your handling code here:
+        if (jRadioButton1.isSelected()) {
+            new payment(a, b, c, e, N1, f).setVisible(true);
+        } else if (jRadioButton2.isSelected()) {
+            new internet_banking(a, b, c, e, N1, f).setVisible(true);
+        } else if (jRadioButton3.isSelected()) {
+            String upiId = JOptionPane.showInputDialog(this, "Enter UPI ID:");
+
+            if (validateUPI(upiId)) {
+                JOptionPane.showMessageDialog(this, "Payment request sent!", "Validation Result", JOptionPane.INFORMATION_MESSAGE);
+                new recepit1(a, b, c, e, N1, f).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid UPI ID!", "Validation Result", JOptionPane.ERROR_MESSAGE);
+            }
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    private static boolean validateUPI(String upiId) {
+        String upiPattern = "^[a-zA-Z0-9]+@[a-zA-Z0-9]+$";
+        Pattern pattern = Pattern.compile(upiPattern);
+        Matcher matcher = pattern.matcher(upiId);
+        return matcher.matches();
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setVisible(false);
         new recepit().setVisible(true); // TODO add your handling code here:
