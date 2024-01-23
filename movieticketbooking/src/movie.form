@@ -26,7 +26,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="286" max="32767" attributes="0"/>
+              <EmptySpace pref="215" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -171,12 +171,17 @@
               <Font name="Times New Roman" size="24" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="KGF"/>
-                <StringItem index="1" value="Robot 2"/>
-                <StringItem index="2" value="Bahubali"/>
-                <StringItem index="3" value="Barbie"/>
-                <StringItem index="4" value="Dunki"/>
+              <StringArray count="10">
+                <StringItem index="0" value="Animal"/>
+                <StringItem index="1" value="Stella"/>
+                <StringItem index="2" value="Tim"/>
+                <StringItem index="3" value="Arm"/>
+                <StringItem index="4" value="Captain America"/>
+                <StringItem index="5" value="Dunki"/>
+                <StringItem index="6" value="Palm Trees"/>
+                <StringItem index="7" value="Hanuman"/>
+                <StringItem index="8" value="Salaar"/>
+                <StringItem index="9" value="Fighter"/>
               </StringArray>
             </Property>
           </Properties>
@@ -190,9 +195,12 @@
               <Font name="Times New Roman" size="24" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
+              <StringArray count="5">
                 <StringItem index="0" value="INOX"/>
                 <StringItem index="1" value="PVR"/>
+                <StringItem index="2" value="Cinepolis"/>
+                <StringItem index="3" value="Carnival"/>
+                <StringItem index="4" value="Miraj"/>
               </StringArray>
             </Property>
           </Properties>
@@ -211,7 +219,7 @@
                 <StringItem index="1" value="12:00 AM"/>
                 <StringItem index="2" value="11:00 AM"/>
                 <StringItem index="3" value="02:00 PM"/>
-                <StringItem index="4" value=" "/>
+                <StringItem index="4" value="05:00 PM"/>
               </StringArray>
             </Property>
           </Properties>
@@ -225,11 +233,12 @@
               <Font name="Times New Roman" size="24" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="11-11-2018"/>
-                <StringItem index="1" value="12-11-2018"/>
-                <StringItem index="2" value="10-11-2018"/>
-                <StringItem index="3" value="09-11-2018"/>
+              <StringArray count="5">
+                <StringItem index="0" value="24-01-2024"/>
+                <StringItem index="1" value="25-01-2024"/>
+                <StringItem index="2" value="26-01-2024"/>
+                <StringItem index="3" value="27-01-2024"/>
+                <StringItem index="4" value=" "/>
               </StringArray>
             </Property>
           </Properties>

@@ -57,16 +57,16 @@ public class movie extends javax.swing.JFrame {
         jLabel2.setText("SELECT  THEATRE:");
 
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "KGF", "Robot 2", "Bahubali", "Barbie", "Dunki" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Animal", "Stella", "Tim", "Arm", "Captain America", "Dunki", "Palm Trees", "Hanuman", "Salaar", "Fighter" }));
 
         jComboBox2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INOX", "PVR" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INOX", "PVR", "Cinepolis", "Carnival", "Miraj" }));
 
         jComboBox3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00 AM", "12:00 AM", "11:00 AM", "02:00 PM", " " }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10:00 AM", "12:00 AM", "11:00 AM", "02:00 PM", "05:00 PM" }));
 
         jComboBox4.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "11-11-2018", "12-11-2018", "10-11-2018", "09-11-2018" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "24-01-2024", "25-01-2024", "26-01-2024", "27-01-2024", " " }));
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox4ActionPerformed(evt);
@@ -167,7 +167,7 @@ public class movie extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(137, 137, 137)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
